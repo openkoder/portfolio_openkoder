@@ -11,7 +11,7 @@
 :root{
     /*--first-color: #5361FF;*/
     --first-color: #F0FE01;
-    /*--white-color: #FAFAFF;*/
+    --white-color: #FAFAFF;
     --white-color: #697477;
     --dark-color: #2A3B47;
     --text-color: #697477;
@@ -190,7 +190,7 @@ img{
 .home__title{
     align-self: flex-end;
     font-size: var(--big-font-size);
-    color: var(--white-color);
+    color: var(--text-color);
     line-height: .8;
 }
 .home__title span{
@@ -414,13 +414,13 @@ img{
         display: none;
     }
     .nav__link{
-        color: var(--white-color);
+        color: var(--text-color);
     }
     .nav__link:hover{
-        color: var(--white-color);
+        color: var(--text-color);
     }
     .active::after{
-        background-color: var(--white-color);
+        background-color: var(--text-color);
     }
 
     .home__container{
