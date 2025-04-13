@@ -152,7 +152,7 @@ img{
     color: var(--first-color);
 }
 .nav__logo{
-    color: var(--white-color);
+    color: var(--text-color);
 }
 .nav__toggle{
     color: var(--white-color);
@@ -235,7 +235,7 @@ img{
 
 .about__subtitle{
     font-size: var(--h2-font-size);
-    color: var(--first-color);
+    color: var(--text-color);
     margin-bottom: var(--mb-1);
 }
 .about__text{
@@ -426,7 +426,7 @@ img{
     }
 
     .home__container{
-        height: 100vh;
+        height: calc(100vh - var(--header-height));;
         grid-template-rows: 1.7fr 1fr;
         row-gap: 0;
     }
