@@ -179,11 +179,13 @@ img{
 
 /*===== HOME =====*/
 .home{
+	display: flex;
     position: relative;
     background-color: var(--first-color);
     overflow: hidden;
 }
 .home__container{
+	margin-top: var(--header-height);
     height: calc(100vh - var(--header-height));
     row-gap: 5rem;
 }
