@@ -159,6 +159,10 @@ window.addEventListener('click', function(event) {
 });
 
 
+/*SCROLL CV*/
+sr.reveal('.cv__subtitle', {})
+sr.reveal('.cv__text', {interval: 200})
+
 /*SCROLL CONTACT*/
 sr.reveal('.contact__subtitle', {})
 sr.reveal('.contact__text', {interval: 200})
