@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тест PgDn</title>
+  <style>
+    :root { --header-height: 48px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      margin-top: var(--header-height); /* Сдвигаем весь контент вниз */
+    }
+
+    header {
+      position: fixed; top: 0; left: 0; width: 100%;
+      height: var(--header-height); background: #333; color: white;
+      z-index: 1000;
+    }
+
+    .section {
+      height: calc(100vh - var(--header-height)); /* Фиксим высоту секции */
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>Фиксированная шапка (48px)</header>
+  <div class="section" style="--bg: #f7dc6f;">HOME</div>
+  <div class="section" style="--bg: #82e0aa;">ABOUT</div>
+  <div class="section" style="--bg: #e59866;">CONTACT</div>
+
+  <script>
+    // Магия JavaScript
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'PageDown' || e.key === 'PageUp') {
+        e.preventDefault(); // Отменяем стандартное поведение
+
+        const scrollStep = window.innerHeight - parseInt(getComputedStyle(document.body).marginTop);
+        const currentScroll = window.scrollY;
+
+        if (e.key === 'PageDown') {
+          window.scrollTo({ top: currentScroll + scrollStep, behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: Math.max(0, currentScroll - scrollStep), behavior: 'smooth' });
+        }
+      }
+    });
+  </script>
+</body>
+</html>
