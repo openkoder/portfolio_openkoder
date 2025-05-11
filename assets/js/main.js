@@ -12,13 +12,83 @@ const showMenu = (toggleId, navId) =>{
 showMenu('nav-toggle','nav-menu')
 
 /*===== REMOVE MENU MOBILE =====*/
-const navLink = document.querySelectorAll('.nav__link')
+const navLink = document.querySelectorAll('.nav__list > .nav__item:not(.nav__lang) > .nav__link')
 
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
     navMenu.classList.remove('show')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+
+// ======= Toggle Language Dropdown =======
+const langToggle = document.getElementById('lang-toggle');
+const langDropdown = document.getElementById('lang-dropdown');
+
+langToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    langDropdown.classList.toggle('show-lang');
+});
+
+// Close dropdown if clicked out
+document.addEventListener('click', (e) => {
+    if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
+        langDropdown.classList.remove('show-lang');
+    }
+});
+
+// ======= Language Change (Basic) =======
+const translations = {
+    en: {
+        home: "Home",
+        about: "About",
+        skills: "Skills",
+        portfolio: "Portfolio",
+        cv: "CV",
+        contact: "Contact",
+        language: "🇬🇧 Language"
+    },
+    ru: {
+        home: "Главная",
+        about: "Обо мне",
+        skills: "Навыки",
+        portfolio: "Портфолио",
+        cv: "Резюме",
+        contact: "Контакты",
+        language: "🇷🇺 Язык"
+    }
+};
+
+let currentLang = 'en'; // Initial language
+
+document.querySelectorAll('.lang-option').forEach((option) => {
+    option.addEventListener('click', (e) => {
+        e.preventDefault();
+        const lang = option.getAttribute('data-lang');
+        changeLanguage(lang);
+        langDropdown.classList.remove('show-lang'); // Cerrar dropdown
+    });
+});
+
+const translatableElements = document.querySelectorAll('[data-translate]');
+function changeLanguage(lang) {
+    translatableElements.forEach((el) => {
+        el.textContent = translations[lang][el.dataset.translate];
+    });
+    
+    // Opcional: Guarda la preferencia en localStorage
+    localStorage.setItem('lang', lang);
+}
+
+
+// Opcional: Recuperar idioma guardado en localStorage
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && translations[savedLang]) {
+        changeLanguage(savedLang);
+    }
+});
+
 
 /*===== SCROLL SECTIONS ACTIVE LINK =====*/
 const sections = document.querySelectorAll('section[id]')

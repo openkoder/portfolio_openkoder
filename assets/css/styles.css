@@ -173,6 +173,7 @@ img{
 .nav__link{
     position: relative;
     color: var(--dark-color);
+    white-space: nowrap;
 }
 .nav__link:hover{
     color: var(--first-color);
@@ -184,6 +185,7 @@ img{
     font-style: italic;
     /*font-style: oblique;*/
     font-family: 'Montserrat', Arial, sans-serif;
+    white-space: nowrap;
 }
 .nav__toggle{
     color: var(--dark-color);
@@ -206,6 +208,52 @@ img{
     top: 2rem;
     background-color: var(--first-color);
 }
+
+/* === Language Dropdown === */
+.nav__lang {
+    position: relative;
+}
+
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lang-dropdown {
+	display: none; /* Oculto por defecto */
+    z-index: var(--z-fixed);
+    position: absolute;
+    top: 2.5rem; /* Language links */
+    left: 0;
+    padding: 0.5rem 1rem;
+    min-width: 150px;
+    background-color: var(--first-color);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lang-dropdown li {
+    margin: 0.5rem 0;
+    white-space: nowrap;
+}
+
+.lang-dropdown a {
+    color: var(--dark-color);
+    font-size: var(--normal-font-size);
+    transition: color 0.3s;
+}
+
+.lang-dropdown a:hover {
+    color: hsl(var(--text-color-hls) / 0.8);
+}
+
+/* Show dropdown when active */
+.lang-dropdown.show-lang {
+    display: block;
+}
+
 
 /*===== HOME =====*/
 .home{
@@ -632,6 +680,26 @@ video {
     .active::after{
         background-color: var(--text-color);
     }
+
+	.lang-dropdown {
+        position: absolute;
+        top: 100%; /* Сразу под языковым переключателем */
+        left: 0;
+        display: none;
+        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--first-color);
+        padding: 0.5rem 1rem;
+        min-width: 150px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+    .lang-toggle {
+        justify-content: space-between;
+    }
+    .nav__lang > .nav__link {
+        /*border-bottom: 1px solid rgba(0,0,0,0.1);*/
+    }
+
 
 	.home{
 		margin-top: var(--header-height);
