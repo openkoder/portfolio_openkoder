@@ -76,7 +76,10 @@ function changeLanguage(lang) {
         el.textContent = translations[lang][el.dataset.translate];
     });
     
-    // Opcional: Guarda la preferencia en localStorage
+    document.documentElement.setAttribute('lang', lang);
+    document.body.setAttribute('lang', lang);
+    
+    // Optional: Save preference in localStorage
     localStorage.setItem('lang', lang);
 }
 

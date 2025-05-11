@@ -24,6 +24,7 @@
     --dark-color: #2A3B47;
     --text-color: #697477;
     --text-color-hls: 194 6% 44%; /* hsl */
+    --blue-color: #1e90ff;
 }
 
 /*===== Fuente y tipografia =====*/
@@ -78,6 +79,11 @@ body{
     color: var(--text-color);
     line-height: 1.6;
 }
+body[lang="en"] *[lang]:not([lang="en"]),
+body[lang="ru"] *[lang]:not([lang="ru"]) {
+  display: none;
+}
+
 .content-with-scroll {
   z-index: 200;
   position: relative; /* нужен position для работы z-index */
@@ -307,7 +313,7 @@ img{
 /* ===== ABOUT =====*/
 .about__container{
     row-gap: 2rem;
-    text-align: center;
+    text-align: justify;
 }
 .about__img{
     display: flex;
@@ -325,7 +331,7 @@ img{
 
 .about__subtitle{
     font-size: var(--h2-font-size);
-    color: var(--text-color);
+    color: var(--blue-color);
     margin-bottom: var(--mb-1);
 }
 .about__text{
@@ -348,7 +354,7 @@ img{
     row-gap: 2rem;
 }
 .skills__subtitle{
-    color: var(--first-color);
+    color: var(--blue-color);
     margin-bottom: var(--mb-3);
     text-shadow: 1px 1px 0 hsl(var(--text-color-hls) / 0.2);
 }
@@ -566,7 +572,7 @@ video {
 }
 .contact__subtitle{
     font-size: var(--normal-font-size);
-    color: var(--first-color);
+    color: var(--blue-color);
 }
 .contact__text{
     display: inline-block;
