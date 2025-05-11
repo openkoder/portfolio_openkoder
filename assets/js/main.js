@@ -25,12 +25,13 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 const langToggle = document.getElementById('lang-toggle');
 const langDropdown = document.getElementById('lang-dropdown');
 
+// Opens or closes the dropdown list on click
 langToggle.addEventListener('click', (e) => {
     e.preventDefault();
     langDropdown.classList.toggle('show-lang');
 });
 
-// Close dropdown if clicked out
+// Closes the dropdown list if clicked outside of it
 document.addEventListener('click', (e) => {
     if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
         langDropdown.classList.remove('show-lang');
@@ -38,58 +39,66 @@ document.addEventListener('click', (e) => {
 });
 
 // ======= Language Change (Basic) =======
-const translations = {
-    en: {
-        home: "Home",
-        about: "About",
-        skills: "Skills",
-        portfolio: "Portfolio",
-        cv: "CV",
-        contact: "Contact",
-        language: "🇬🇧 Language"
-    },
-    ru: {
-        home: "Главная",
-        about: "Обо мне",
-        skills: "Навыки",
-        portfolio: "Портфолио",
-        cv: "Резюме",
-        contact: "Контакты",
-        language: "🇷🇺 Язык"
-    }
-};
 
-let currentLang = 'en'; // Initial language
-
-document.querySelectorAll('.lang-option').forEach((option) => {
-    option.addEventListener('click', (e) => {
-        e.preventDefault();
-        const lang = option.getAttribute('data-lang');
-        changeLanguage(lang);
-        langDropdown.classList.remove('show-lang'); // Cerrar dropdown
-    });
+// Closing dropdown when selecting a language
+document.querySelectorAll('.lang-option').forEach((link) => {
+	link.addEventListener('click', () => {
+		// Get language from data attribute (e.g., "en", "ru")
+		const lang = link.dataset.lang || 'en';
+		
+		// Save the selected language to localStorage
+		changeLanguage(lang);
+		
+		// Close the language dropdown menu
+		langDropdown.classList.remove('show-lang');
+		// The browser will follow the link automatically (no need to manually redirect)
+	});
 });
 
-const translatableElements = document.querySelectorAll('[data-translate]');
-function changeLanguage(lang) {
-    translatableElements.forEach((el) => {
-        el.textContent = translations[lang][el.dataset.translate];
-    });
-    
-    document.documentElement.setAttribute('lang', lang);
-    document.body.setAttribute('lang', lang);
-    
+
+function changeLanguage(lang) {    
     // Optional: Save preference in localStorage
     localStorage.setItem('lang', lang);
 }
 
 
-// Opcional: Recuperar idioma guardado en localStorage
+// Optional: Retrieve language saved in localStorage
+/*
+document.querySelectorAll('.lang-option').forEach((option) => {
+	option.addEventListener('click', () => {
+		langDropdown.classList.remove('show-lang');
+	});
+});
+*/
+
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('lang');
-    if (savedLang && translations[savedLang]) {
-        changeLanguage(savedLang);
-    }
+	const savedLang = localStorage.getItem('lang');
+	console.log('savedLang:', savedLang);
+	
+	if (savedLang) {
+		const currentPath = window.location.pathname || '/'; // Если пусто — берём '/'
+
+		console.log('Current path:', currentPath);
+		console.log('Base path:', basePath);
+		
+		if (savedLang === 'en') {
+			// If English is saved, but we're not in root → redirect to root
+			if (currentPath !== '/' && currentPath !== '/index.html' && !currentPath.endsWith('/en/') && !currentPath.endsWith('/en/index.html')) {
+				// GitHub Pages project URL fix (e.g., /portfolio_openkoder/)
+				const basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '/';
+				console.log('Base path:', basePath); //
+				
+				window.location.href = `${basePath}/`;
+			} else {
+			  // For other languages (ru, es...), redirect to /lang/ folder
+				if (!currentPath.endsWith(`/${savedLang}/`) && !currentPath.endsWith(`/${savedLang}/index.html`)) {
+					const basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '/';
+					console.log('Base path:', basePath);
+					window.location.href = `${basePath}/${savedLang}/`;
+				}
+			}
+		}
+	}
 });
 
 

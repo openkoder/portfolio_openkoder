@@ -334,6 +334,11 @@ img{
     color: var(--blue-color);
     margin-bottom: var(--mb-1);
 }
+h3.about__subtitle{
+    font-size: var(--h3-font-size);
+    color: var(--blue-color);
+    margin-bottom: var(--mb-1);
+}
 .about__text{
     margin-bottom: var(--mb-4);
 }

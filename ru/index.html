@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-    <html lang="en">
+    <html lang="ru">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- ===== CSS ===== -->
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="../assets/css/styles.css">
 
         <!-- ===== BOX ICONS ===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
         <title>Portfolio responsive complete</title>
     </head>
-    <body lang="en">
+    <body>
         <!--===== HEADER =====-->
         <header class="l-header">
             <nav class="nav bd-grid">
@@ -22,22 +22,22 @@
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active" data-translate="home">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link" data-translate="about">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link" data-translate="skills">Skills</a></li>
-                        <li class="nav__item"><a href="#portfolio" class="nav__link" data-translate="portfolio">Portfolio</a></li>
+                        <li class="nav__item"><a href="#home" class="nav__link active" data-translate="home">Главная</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link" data-translate="about">Обо мне</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link" data-translate="skills">Навыки</a></li>
+                        <li class="nav__item"><a href="#portfolio" class="nav__link" data-translate="portfolio">Портфолио</a></li>
                         <li class="nav__item"><a href="#cv" class="nav__link" data-translate="cv">CV</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link" data-translate="contact">Contact</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link" data-translate="contact">Контакты</a></li>
                         
                         <!-- Language Dropdown -->
                         <li class="nav__item nav__lang">
 							<a href="#" class="nav__link lang-toggle" id="lang-toggle">
-								<span data-translate="language">🇬🇧 Language</span> 
+								<span data-translate="language">🇷🇺 Язык</span> 
 								<i class='bx bx-chevron-down'></i>
 							</a>
 							<ul class="lang-dropdown" id="lang-dropdown">
-								<li><a href="#" class="lang-option" hreflang="en" data-lang="en">🇬🇧 English (EN)</a></li>
-								<li><a href="./ru/index.html" class="lang-option" hreflang="ru" data-lang="ru">🇷🇺 Русский (RU)</a></li>
+								<li><a href="../index.html" class="lang-option" hreflang="en" data-lang="en">🇬🇧 English (EN)</a></li>
+								<li><a href="#" class="lang-option" hreflang="ru" data-lang="ru">🇷🇺 Русский (RU)</a></li>
 							</ul>
 						</li>
                     </ul>
@@ -59,73 +59,82 @@
                         <a href="#about" class="home__scroll-link"><i class='bx bx-up-arrow-alt' ></i>Scroll down</a>
                     </div>
 
-                    <img src="assets/img/vitalii_fleganov.png" alt="" class="home__img hidden">
+                    <img src="../assets/img/vitalii_fleganov.png" alt="" class="home__img hidden">
                 </div>
             </section>
             
             <!--===== ABOUT =====-->
             <section class="about section" id="about">
-                <h2 class="section-title" lang="en">About</h2>
-                <h2 class="section-title" lang="ru">Обо мне</h2>
+                <h2 class="section-title">Обо мне</h2>
 
                 <div class="about__container bd-grid">
                     <div class="about__img">
-                        <img src="assets/img/vitalii_fleganov.png" alt="">
+                        <img src="../assets/img/vitalii_fleganov.png" alt="">
                     </div>
 
                     <div>
-                        <h2 class="about__subtitle">I'am Vitalii Fleganov</h2>
+                        <h2 class="about__subtitle">Я — Виталий Флеганов</h2>
                         <span class="about__profession">
-							Full-Stack Web Developer | 12+ Years of Freelance Expertise | PHP, JavaScript, Laravel, MariaDB
+							Full-Stack веб-разработчик | Более 12 лет опыта фриланса | PHP, JavaScript, Laravel, MariaDB
 						</span>
 
 						<p class="about__text">
-							<b>Transforming Challenges into High-Performance Web Solutions</b>
+							<b>Преобразую ваши задачи в высокопроизводительные веб-решения</b>
 						</p>
 						<p class="about__text">
-							As a seasoned <b>Full-Stack Web Developer</b> with over <b>10 years of hands-on experience</b>, I specialize in <b>crafting scalable, lightning-fast web applications</b> for e-commerce, marketplaces, and business-critical platforms from scratch.
+							Как опытный <b>Full-Stack Web-разработчик</b> с более чем <b>10-летним практическим опытом</b>, я специализируюсь на <b>создании масштабируемых, сверхбыстрых веб-приложений</b> с нуля для e-commerce, маркетплейсов и бизнес-критически важных платформ.
+						</p>
+						<h3 class="about__subtitle">
+							Моё главное оружие?
+						</h2>
+						<p class="about__text">
+							<b>PHP, JavaScript, Laravel, HTML, CSS и MariaDB.</b>
+							Но дело не только в технологиях — важно уметь достигать реальных результатов в условиях жёстких сроков и ограниченных бюджетов.
 						</p>
 						<p class="about__text">
-							My weapon of choice?<br>
-							<b>PHP, JavaScript, Laravel, HTML, CSS, and MariaDB.</b> But it’s not just about tech skills – it’s about <b>delivering real results</b> under tight deadlines and budgets.
+							Фриланс более 10 лет научил меня <b>самодисциплине, находчивости и предельной концентрации</b>. Я не просто пишу код — я <b>создаю инженерные решения</b>. При то отладке устаревших систем, оптимизации производительности или разработке надёжных маркетплейсов, я придерживаюсь принципа <b>K.I.S.S. (Keep It Super Simple — "Делай максимально просто")</b>. Простой код не только легче поддерживать — он надёжнее, быстрее и лучше подготовлен к будущим изменениям. В сочетании с <b>парадигмой MVC</b> мой подход обеспечивает <b>структурную, модульную и эффективную архитектуру</b>, которая развивается и растёт вместе с вашим бизнесом.
+						</p>
+						<h3 class="about__subtitle">
+							Что мною движет?
+						</h2>
+						<p class="about__text">
+							Задания. Сложные проблемы. Кажущиеся неразрешимыми задачи.
 						</p>
 						<p class="about__text">
-							Freelancing for over a decade taught me <b>self-discipline, resourcefulness, and laser-sharp focus</b>. I don’t just write code; I <b>engineer solutions</b>. Whether it’s debugging legacy systems, optimizing performance, or building robust marketplaces, I live by the <b>K.I.S.S. principle (Keep It Super Simple)</b>. Simpler code isn’t just easier to maintain – it’s more reliable, performant, and future-proof. Paired with the <b>MVC paradigm</b>, my approach ensures <b>structured, modular, and efficient architecture</b> that grows with your business.
+							<b>Моё супероружие — упорство в решении сложнейших задач.</b> Когда возникает тупик, <b>я превращаюсь в программиста-бульдозера</b>: настойчивого, методичного и неудержимого, пока работа не будет сделана.
+						</p>
+						<h3 class="about__subtitle">
+							Нужны доказательства?
+						</h2>
+						<p class="about__text">
+							Однажды в рамках мизерного бюджета клиента нужно было сделать <b>проект маркетплейса</b>. Для этого я взял заброшенный проект с открытым исходным кодом с GitHub, исправил в нём критические ошибки, оптимизировал производительность и сдал <b>полностью рабочий продукт</b>. Это не просто кодинг — <b>это превращение ограничений в инновации</b>.
+						</p>
+						<p class="about__text"> 
+							<b>Я не просто создаю сайты; я проектирую цифровые решения, которые:</b><br>
+							✦ Максимально эффективны (оптимизированные запросы, минимальное потребление ресурсов)<br>
+							✦ Растут вместе с вашим бизнесом (модульная архитектура, дизайн расчитанный на будущее)<br>
+							✦ Всегда превосходят ожидания клиентов (прозрачная коммуникация, дедлайны соблюдаются строго)
 						</p>
 						<p class="about__text">
-							<b>What drives me?</b><br>
-							Challenges. Complex problems. Seemingly unsolvable tasks.
+							<b>Если Вы ищете разработчика, который сочетает в себе:</b><br>
+							✔ Глубокие технические знания (PHP, Laravel, JS, MariaDB)<br>
+							✔ Экономные инновации (достигаем большего с меньшими ресурсами)<br>
+							✔ Беспрецедентную настойчивость (не знает слово "невозможно")
 						</p>
 						<p class="about__text">
-							<b>My superpower is persistence in solving complex tasks.</b> When faced with a roadblock, <b>I become a programmer-bulldozer</b> – relentless, methodical, and unstoppable until the job is done.<br>
-							Need proof?<br>
-							I once took an <b>open-source marketplace project from GitHub</b>, fixed its critical flaws, optimized performance, and delivered a <b>fully functional platform</b> within a client’s minuscule budget. That’s not just coding – that’s <b>turning constraints into innovations</b>.
-						</p>
-						<p class="about__text">
-							<b>I don’t just develop websites; I engineer digital experiences that:</b><br>
-							✦ Maximize performance (optimized queries, minimal resource consumption)<br>
-							✦ Scale with your growth (modular architecture, future-ready design)<br>
-							✦ Exceed client expectations (transparent communication, deadlines always met) 
-						</p>
-						<p class="about__text">
-							<b>If you’re searching for a developer who blends:</b><br>
-							✔ Deep tech expertise (PHP, Laravel, JS, MariaDB)<br>
-							✔ Frugal innovation (doing more with less)<br>
-							✔ Unmatched persistence (no problem is "impossible") 
-						</p>
-						<p class="about__text">
-							<b>Let’s connect!</b> Whether you’re launching a startup, optimizing legacy systems, or need a second opinion on your project, I’m here to help.
+							<b>Давайте сотрудничать!</b><br>
+							Не важно, запускаете ли вы стартап, оптимизируете устаревшие системы или вам нужен взгляд со стороны на ваш проект — я здесь, чтобы помочь.
 						</p>
 						
 						<h2 class="about__subtitle">
-							Summary
+							Резюме
 						</h2>
 						<p class="about__text">
-							Full-Stack Web Developer | 10+ Years of Experience<br>
-							<b>Expert in:</b> PHP · JavaScript · Laravel · MariaDB · Scalable Web Architecture<br>
-							Delivered <b>high-impact e-commerce &amp; marketplace solutions</b>, consistently exceeding client goals.<br>
-							Adept at <b>efficient coding, MVC design, and performance optimization</b>.<br>
-							<b>My superpower? Persistence.</b> I’m the programmer-bulldozer who <b>solves the unsolvable</b>.
+							Full-Stack Web Developer | Более 10 лет опыта<br>
+							<b>Эксперт в:</b> PHP · JavaScript · Laravel · MariaDB · Масштабируемой веб-архитектуре<br>
+							Разработал <b>высокоэффективные решения для электронной коммерции и маркетплейсов</b>, стабильно превосходя цели клиентов.<br>
+							Владею <b>эффективными методами кодирования, дизайном MVC и оптимизацией производительности</b>.<br>
+							<b>Моя суперсла? Упорство.</b> Я — программист-бульдозер, который <b>решает нерешаемые задачи</b>.
 						</p>
 						
 						<h2 class="about__subtitle">
@@ -245,8 +254,8 @@
                     </div>
 
                     <div class="skills__img">
-                        <img src="assets/img/skill.jpg" alt="">
-                        <img src="assets/img/skill2.jpg" alt="">
+                        <img src="../assets/img/skill.jpg" alt="">
+                        <img src="../assets/img/skill2.jpg" alt="">
                     </div>
                 </div>
             </section>
@@ -299,11 +308,11 @@
 							<div class="video-container">
 								<h3>Application Demonstration</h3>
 								<video controls>
-									<source src="assets/img/work1_takleef.mp4" type="video/mp4">
+									<source src="../assets/img/work1_takleef.mp4" type="video/mp4">
 									Your browser does not support video playback.
 								</video>
 								
-								<img src="assets/img/work1_takleef.png">
+								<img src="../assets/img/work1_takleef.png">
 							</div>
 						</section>
 			
@@ -380,11 +389,11 @@
 						<div class="video-container">
 							<h3>Application Demonstration</h3>
 							<video controls>
-								<source src="assets\img\work2_blockchain.mp4" type="video/mp4">
+								<source src="../assets\img\work2_blockchain.mp4" type="video/mp4">
 								Your browser does not support video playback.
 							</video>
 							
-							<img src="assets/img/work2_blockchain.png">
+							<img src="../assets/img/work2_blockchain.png">
 						</div>
 					</section>
 				</div>
@@ -456,8 +465,8 @@
 							⚙️ <b>Methodologies:</b> Agile | CI/CD | Static Code Analysis | Containerization
 						</div>
 						<div class="image-gallery">
-							<img src="assets/img/work3_linkupsport_1.png" alt="Project Image 1" class="gallery-image">
-							<img src="assets/img/work3_linkupsport_2.jpg" alt="Project Image 2" class="gallery-image">
+							<img src="../assets/img/work3_linkupsport_1.png" alt="Project Image 1" class="gallery-image">
+							<img src="../assets/img/work3_linkupsport_2.jpg" alt="Project Image 2" class="gallery-image">
 						</div>
 					</section>
 				</div>
@@ -518,8 +527,8 @@
 							⚙️ <b>Methodology:</b> Agile Development &amp; Iterative Testing – Balancing speed with robustness, underpinned by CI/CD principles.
 						</div>
 						<div class="image-gallery">
-							<img src="assets/img/work4_laravel_1.png" alt="Project Image 1" class="gallery-image">
-							<img src="assets/img/work4_laravel_2.png" alt="Project Image 2" class="gallery-image">
+							<img src="../assets/img/work4_laravel_1.png" alt="Project Image 1" class="gallery-image">
+							<img src="../assets/img/work4_laravel_2.png" alt="Project Image 2" class="gallery-image">
 						</div>
 					</section>
 				</div>
@@ -531,7 +540,7 @@
 
                 <div class="portfolio__container bd-grid">
                     <div class="portfolio__img">
-                        <img src="assets/img/work1_takleef.png" alt="AI-Powered Image Quality System for Emergency Response">
+                        <img src="../assets/img/work1_takleef.png" alt="AI-Powered Image Quality System for Emergency Response">
                         <span>AI-Powered Image Quality System for Emergency Response</span>
 
                         <div class="portfolio__link">
@@ -539,7 +548,7 @@
                         </div>
                     </div>
                     <div class="portfolio__img">
-                        <img src="assets/img/work2_blockchain.png" alt="My experience in Web 3.0 Development">
+                        <img src="../assets/img/work2_blockchain.png" alt="My experience in Web 3.0 Development">
                         <span>My experience in Web 3.0 Development</span>
 
                         <div class="portfolio__link">
@@ -547,7 +556,7 @@
                         </div>
                     </div>
                     <div class="portfolio__img">
-                        <img src="assets/img/work3_linkupsport_1.png" alt="NextGen Tournaments: Full-Stack Platform for Real-Time Competitive Event Control">
+                        <img src="../assets/img/work3_linkupsport_1.png" alt="NextGen Tournaments: Full-Stack Platform for Real-Time Competitive Event Control">
                         <span>NextGen Tournaments: Full-Stack Platform for Real-Time Competitive Event Control</span>
 
                         <div class="portfolio__link">
@@ -555,7 +564,7 @@
                         </div>
                     </div>
                     <div class="portfolio__img">
-                        <img src="assets/img/work4_laravel_1.png" alt="Leading EcoVoyage: A Scalable Sustainable Travel Platform (Laravel, MySQL)">
+                        <img src="../assets/img/work4_laravel_1.png" alt="Leading EcoVoyage: A Scalable Sustainable Travel Platform (Laravel, MySQL)">
                         <span>Leading EcoVoyage: A Scalable Sustainable Travel Platform (Laravel, MySQL)</span>
 
                         <div class="portfolio__link">
@@ -647,6 +656,6 @@
         <script src="https://unpkg.com/scrollreveal"></script>
 
         <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+        <script src="../assets/js/main.js"></script>
     </body>
 </html>
