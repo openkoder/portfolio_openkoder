@@ -104,24 +104,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*===== SCROLL SECTIONS ACTIVE LINK =====*/
 const sections = document.querySelectorAll('section[id]')
+const navLinks = document.querySelectorAll('.nav__link'); // закэшировали ссылки
+const headerHeight = document.querySelector('.l-header').offsetHeight; // закэшировали высоту шапки
 
-window.addEventListener('scroll', scrollActive)
+let ticking = false;
+
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    ticking = true;
+    window.requestAnimationFrame(function() {
+      scrollActive();
+      ticking = false;
+    });
+  }
+});
 
 function scrollActive(){
-    const scrollY = window.pageYOffset
+    const scrollY = Math.ceil(window.pageYOffset)
+
+	// Сначала удаляем .active у всех ссылок
+    navLinks.forEach(link => link.classList.remove('active'));
 
     sections.forEach(current =>{
-        const sectionHeight = current.offsetHeight
-        const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
+		const sectionHeight = current.offsetHeight
+		//const sectionTop = current.offsetTop - 50;
+        const sectionTop = current.offsetTop - headerHeight; // Вот тут меняем -50 на -headerHeight
+		sectionId = current.getAttribute('id')
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+        if(scrollY >= sectionTop && scrollY < sectionTop + sectionHeight){
+			// Отладочный вывод
+			console.log(`Section: ${sectionId}, Top: ${sectionTop}, Height: ${sectionHeight}, ScrollY: ${scrollY}`);
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
-        }
+		}
     })
 }
+
+// Фикс для перезагрузки с #якорем
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(scrollActive, 100); 
+});
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
