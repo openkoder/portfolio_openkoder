@@ -223,7 +223,14 @@ sr.reveal('.about__social-icon', {delay: 600, interval: 200})
 sr.reveal('.skills__subtitle', {})
 //sr.reveal('.skills__name', {distance: '20px', delay: 50, interval: 100})
 sr.reveal('.skills__name', { origin: 'bottom', distance: '20px', delay: 50, interval: 100 }); // снизу
-sr.reveal('.skills__img', {delay: 400})
+sr.reveal('.skills__img  img', {
+  origin: 'right',
+  distance: '100%',
+  delay: 400,
+  interval: 400, // каждая следующая картинка будет появляться на 200мс позже
+  viewFactor: 0,
+  reset: true // чтобы повторялась при повторном скролле
+});
 
 
 /*SCROLL PORTFOLIO*/

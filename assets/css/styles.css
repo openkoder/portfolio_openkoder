@@ -376,6 +376,9 @@ h3.about__subtitle{
     background-color: var(--first-color);
     color: var(--white-color);
 }
+.skills__img {
+	overflow: hidden;
+}
 .skills__img img{
 	margin-bottom: var(--mb-3);
     border-radius: .5rem;
@@ -745,6 +748,11 @@ video {
         grid-template-columns: repeat(2, 1fr);
         /*align-items: center;*/
     }
+    .skills__img {
+		grid-column: 2; /* Принудительно во вторую колонку */
+		overflow: hidden;
+	}
+
 
     .portfolio__container{
         grid-template-columns: repeat(3, 1fr);
